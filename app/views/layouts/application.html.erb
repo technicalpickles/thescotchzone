@@ -9,14 +9,26 @@
   </head>
   <body>
     <% container do %>
-      <% full do %>
+      <% column :full do %>
         <h1>The Scotch Zone</h1>
       <% end %>
 
-      <% full do %>
+      <% column :three_fourths do %>
+        <%= link_to "Scotches", scotches_path %>
       <% end %>
 
-      <%= yield %>
+      <% column :one_fourth, :last do %>
+        <% if signed_in? %>
+          <%= link_to 'Sign out', sign_out_path %>
+        <% else %>
+          <%= link_to 'Sign in', sign_in_path %>
+        <% end %>
+      <% end %>
+
+
+      <% column :full do %>
+        <%= yield %>
+      <% end %>
     <% end %>
   </body>
 </html>
