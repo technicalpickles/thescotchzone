@@ -1,0 +1,73 @@
+/* this CSS stylesheet uses some icons from the 
+   wonderful Silk icon set, available at
+   http://www.famfamfam.com/lab/icons/silk/
+ */
+
+/* COLORS */
+form .error input, form .error select, form .error textarea {
+  border-color: #cc0000;
+}
+
+.autocomplete-w1 { background-color: #636363; /* IE6 fix: */ _background:none; }
+.autocomplete { border-color: #888; background: #FFF; }
+.autocomplete .selected { background: #dfdfdf; }
+
+/* CURSORS */
+label[title], input[title], textarea[title], select[title], abbr[title] { cursor: help; }
+
+.autocomplete div:hover { cursor: pointer; }
+
+/* TYPOGRAPHY */
+.autocomplete strong { font-weight:normal; text-decoration: underline; }
+
+/* LAYOUT */
+form input.search, form input.tags {
+  background-repeat: no-repeat;
+  background-position: 2px center;
+  padding: 0.1em 0.1em 0.1em 20px;
+}
+
+form input.search {
+  background-image: url("/images/silk/magnifier.png");
+}
+
+form input.tags {
+  background-image: url("/images/silk/tag_blue_add.png");
+}
+
+form fieldset.buttons input + input {
+  margin-left: 4em;
+}
+
+form.formtastic fieldset { display: block; }
+
+form.formtastic fieldset ol li p.inline-errors {
+  margin: 0;
+  text-align: right;
+}
+
+form.formtastic fieldset ol li { display: block; margin-bottom: 1em; }
+
+form.formtastic fieldset ol li label {
+  float: none;
+  width: auto;
+}
+
+form.formtastic fieldset ol li.string input,
+form.formtastic fieldset ol li.numeric input,
+form.formtastic fieldset ol li.text textarea,
+form.formtastic fieldset ol li.select select,
+form.formtastic fieldset ol li p.inline-hints,
+form.formtastic fieldset ol li p.inline-errors {
+  margin-left: 0em;
+  width: 80%;
+}
+
+form.formtastic fieldset ol li.error,
+form.formtastic fieldset ol li.success {
+  background-repeat: no-repeat;
+  background-position: 82% 2em;
+}
+
+form.formtastic fieldset ol li.error { background-image: url("/images/silk/exclamation.png"); }
+form.formtastic fieldset ol li.success { background-image: url("/images/silk/accept.png"); }
