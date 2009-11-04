@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <%= stylesheet_link_tag 'blueprint/screen.css', :media => 'screen, projection' %>
+    <%= stylesheet_link_tag 'blueprint/print.css', :media => 'screen, projection' %>
+    <!--[if lt IE 8]>
+    <%= stylesheet_link_tag 'blueprint/ie.css', :media => 'screen, projection' %>
+    <![endif]-->
+    
+  </head>
+  <body>
+    <% container do %>
+      <% full do %>
+        <h1>The Scotch Zone</h1>
+      <% end %>
+
+      <% full do %>
+      <% end %>
+
+      <%= yield %>
+    <% end %>
+  </body>
+</html>
+
