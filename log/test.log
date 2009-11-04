@@ -1,0 +1,84 @@
+  [4;36;1mScotch Create (0.4ms)[0m   [0;1mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:53:37', '2009-11-04 00:53:37', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:53:37) [GET]
+  [4;35;1mScotch Create (0.3ms)[0m   [0mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:53:37', '2009-11-04 00:53:37', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:53:37) [GET]
+  [4;36;1mScotch Create (0.3ms)[0m   [0;1mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:53:37', '2009-11-04 00:53:37', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:53:37) [GET]
+  [4;36;1mScotch Create (0.4ms)[0m   [0;1mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:54:36', '2009-11-04 00:54:36', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:54:36) [GET]
+  [4;35;1mScotch Create (0.6ms)[0m   [0mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:54:36', '2009-11-04 00:54:36', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:54:36) [GET]
+  [4;36;1mScotch Create (0.3ms)[0m   [0;1mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:54:36', '2009-11-04 00:54:36', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:54:36) [GET]
+  [4;36;1mScotch Create (0.4ms)[0m   [0;1mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:55:06', '2009-11-04 00:55:06', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:55:06) [GET]
+Rendering scotches/index
+Completed in 27ms (View: 25, DB: 1) | 200 OK [http://test.host/scotches]
+  [4;35;1mScotch Create (0.3ms)[0m   [0mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:55:06', '2009-11-04 00:55:06', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:55:06) [GET]
+Rendering scotches/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/scotches]
+  [4;36;1mScotch Create (0.3ms)[0m   [0;1mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:55:06', '2009-11-04 00:55:06', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:55:06) [GET]
+Rendering scotches/index
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://test.host/scotches]
+  [4;36;1mScotch Create (0.4ms)[0m   [0;1mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:57:31', '2009-11-04 00:57:31', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:57:31) [GET]
+  [4;35;1mScotch Load (0.4ms)[0m   [0mSELECT * FROM "scotches" [0m
+Rendering scotches/index
+Completed in 4ms (View: 1, DB: 2) | 200 OK [http://test.host/scotches]
+  [4;36;1mScotch Create (0.3ms)[0m   [0;1mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:57:31', '2009-11-04 00:57:31', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:57:31) [GET]
+  [4;35;1mScotch Load (0.3ms)[0m   [0mSELECT * FROM "scotches" [0m
+Rendering scotches/index
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/scotches]
+  [4;36;1mScotch Create (0.3ms)[0m   [0;1mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:57:31', '2009-11-04 00:57:31', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:57:31) [GET]
+  [4;35;1mScotch Load (0.6ms)[0m   [0mSELECT * FROM "scotches" [0m
+Rendering scotches/index
+Completed in 2ms (View: 0, DB: 1) | 200 OK [http://test.host/scotches]
+  [4;36;1mScotch Create (0.4ms)[0m   [0;1mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:59:27', '2009-11-04 00:59:27', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:59:27) [GET]
+  [4;35;1mScotch Load (0.2ms)[0m   [0mSELECT * FROM "scotches" [0m
+Rendering scotches/index
+Completed in 4ms (View: 1, DB: 1) | 200 OK [http://test.host/scotches]
+  [4;36;1mScotch Create (0.3ms)[0m   [0;1mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:59:27', '2009-11-04 00:59:27', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:59:28) [GET]
+  [4;35;1mScotch Load (0.2ms)[0m   [0mSELECT * FROM "scotches" [0m
+Rendering scotches/index
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/scotches]
+  [4;36;1mScotch Create (0.3ms)[0m   [0;1mINSERT INTO "scotches" ("name", "created_at", "updated_at", "age") VALUES(NULL, '2009-11-04 00:59:28', '2009-11-04 00:59:28', NULL)[0m
+
+
+Processing ScotchesController#index (for 0.0.0.0 at 2009-11-03 19:59:28) [GET]
+  [4;35;1mScotch Load (0.2ms)[0m   [0mSELECT * FROM "scotches" [0m
+Rendering scotches/index
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://test.host/scotches]
