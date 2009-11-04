@@ -29,3 +29,5 @@ config.action_mailer.delivery_method = :test
 
 config.gem 'shoulda'
 config.gem 'redgreen'
+
+HOST = "localhost:3000"
