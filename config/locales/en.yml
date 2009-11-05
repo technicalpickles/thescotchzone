@@ -7,3 +7,5 @@ en:
     title:
       sessions:
         new: "Sign In"
+      scotches:
+        show: "{{resource}}"
