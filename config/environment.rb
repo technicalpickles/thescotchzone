@@ -6,6 +6,7 @@ Rails::Initializer.run do |config|
   config.gem 'inherited_resources'
   config.gem 'clearance'
   config.gem 'formtastic'
+  config.gem 'title_estuary'
   config.time_zone = 'UTC'
 end
 

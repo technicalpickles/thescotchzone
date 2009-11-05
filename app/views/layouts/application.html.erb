@@ -1,5 +1,6 @@
 <html>
   <head>
+    <title><%= page_title %> - The Scotch Zone</title>
     <%= stylesheet_link_tag 'blueprint/screen.css', :media => 'screen, projection' %>
     <%= stylesheet_link_tag 'blueprint/print.css', :media => 'print' %>
     <!--[if lt IE 8]>
@@ -28,6 +29,16 @@
 
 
       <% column :full do %>
+        <% [:notice, :error, :warning].each do |key|  %>
+          <% if flash[key].present? %>
+            <div id="<%= key %>">
+              <%= flash[key] %>
+            </div>
+          <%end %>
+        <% end %>
+
+        <h2><%= page_title %></h2>
+
         <%= yield %>
       <% end %>
     <% end %>
