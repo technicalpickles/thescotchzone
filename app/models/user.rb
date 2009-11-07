@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :notes
   has_many :scotches, :through => :notes
+
+  def to_s
+    screen_name
+  end
 end

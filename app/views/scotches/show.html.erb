@@ -5,13 +5,15 @@
 </dl>
 
 <% @scotch.notes.each do |note| -%>
+  <% div_for note do %>
+    <p><%= link_to note.user, note.user %> wrote:</p>
+    <blockquote><%= simple_format note.body %></blockquote>
+  <% end %>
   <div>
-    <%= simple_format note.body %>
   </div>
 <% end %>
 
 <%- semantic_form_for [@scotch, @note] do |form| %>
-  <%= form.errors %>
   <% form.inputs do %>
     <%= form.input :body %>
   <% end %>
