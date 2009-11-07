@@ -3,3 +3,9 @@
   <dt>Age</dt>
   <dd><%= @scotch.age %></dd>
 </dl>
+
+<% @scotch.notes.each do |note| -%>
+  <div>
+    <%= simple_format note.body %>
+  </div>
+<% end %>
