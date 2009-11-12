@@ -25,3 +25,5 @@ config.action_mailer.delivery_method = :smtp
 
 # Enable threaded mode
 # config.threadsafe!
+
+HOST="thescotchzone.heroku.com"
