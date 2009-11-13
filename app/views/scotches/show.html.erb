@@ -1,25 +1,29 @@
+<%- self.page_title = h(@scotch.name) %>
 
 <dl>
   <dt>Age</dt>
-  <dd><%= @scotch.age %></dd>
+  <dd><%= h(@scotch.age) %></dd>
 </dl>
 
 <h3>Have you had this scotch? What say you?</h3>
 
-<%- semantic_form_for [@scotch, @note] do |form| %>
-  <% form.inputs do %>
-    <%= form.input :body, :input_html => { :rows => 5 } %>
+<%- if signed_in? %>
+  <%- semantic_form_for [@scotch, @note] do |form| %>
+    <%= form.error_messages %>
+    <%= form.inputs :body %>
+    <%= form.buttons :commit %>
   <% end %>
-
-  <%= form.buttons :commit %>
+<% else %>
+  <p>We can't wait to hear about it, but... you gotta <%= link_to "Sign in", sign_in_path(:return_to => request.path) %> or <%= link_to "Sign up", sign_up_path(:return_to => request.path) %> first.
 <% end %>
+
 
 <h3>Here's what others are saying</h3>
 
 <%- if @scotch.notes.present? -%>
   <% @scotch.notes.each do |note| -%>
     <% div_for note do %>
-      <p><%= link_to note.user, note.user %> wrote:</p>
+      <p><%= link_to h(note.user), note.user %> wrote:</p>
       <blockquote><%= simple_format note.body %></blockquote>
     <% end %>
     <div>

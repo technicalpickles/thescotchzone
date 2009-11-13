@@ -1,4 +1,5 @@
 <% semantic_form_for :session, :url => session_path do |form| %>
+  <%= hidden_field_tag :return_to, params[:return_to] %>
   <% form.inputs do %>
     <%= form.input :email %>
     <%= form.input :password, :as => :password %>

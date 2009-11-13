@@ -2,6 +2,6 @@
 
 <ul>
   <%- @scotches.each do |scotch| %>
-    <li><%= link_to scotch.name, scotch_path(scotch) %></li>
+    <li><%= link_to h(scotch), scotch_path(scotch) %></li>
   <%- end %>
 </ul>
