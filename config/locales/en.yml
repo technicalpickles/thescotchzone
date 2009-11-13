@@ -5,7 +5,9 @@ en:
         password_confirmation: Confirm password
   page:
     title:
+      'clearance/users':
+        new: Sign up
       'clearance/sessions':
-        new: "Sign In"
+        new: Sign in
       scotches:
         show: "{{resource}}"
