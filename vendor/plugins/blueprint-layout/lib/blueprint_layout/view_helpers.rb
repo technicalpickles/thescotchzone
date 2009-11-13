@@ -63,7 +63,7 @@ module BlueprintLayout
       size = :full if size.blank?
       
       increase_blueprint_depth(size)
-      output_tag = generate_output_tag(size, args, &block)
+      output_tag = generate_output_tag(size, *args, &block)
       
       if block_given? && block_is_within_action_view?(block)
         concat(output_tag)

@@ -7,28 +7,34 @@
     <%= stylesheet_link_tag 'blueprint/ie.css', :media => 'screen, projection' %>
     <![endif]-->
     <%= stylesheet_link_tag 'formtastic', 'formtastic_customizations' %>
+    <%= stylesheet_link_tag 'application' %>
     
   </head>
   <body>
     <% container do %>
-      <% column :full do %>
+      <% column :full, :id => :heading do %>
         <h1>The Scotch Zone</h1>
       <% end %>
 
-      <% column :three_fourths do %>
-        <%= link_to "Scotches", scotches_path %>
-      <% end %>
+      <% column :full, :id => :navigation do %>
+        <% column :three_fourths do %>
+          <%= link_to 'Home', root_path %>
+          <%= link_to 'Scotches', scotches_path %>
 
-      <% column :one_fourth, :last do %>
-        <% if signed_in? %>
-          <%= link_to 'Sign out', sign_out_path %>
-        <% else %>
-          <%= link_to 'Sign in', sign_in_path %>
+          <%= link_to 'Users', users_path  %>
+        <% end %>
+
+        <% column :one_fourth, :last do %>
+          <% if signed_in? %>
+            <%= link_to 'Sign out', sign_out_path %>
+          <% else %>
+            <%= link_to 'Sign in', sign_in_path %>
+          <% end %>
         <% end %>
       <% end %>
 
 
-      <% column :full do %>
+      <% column :full, :id => :content do %>
         <% [:notice, :error, :warning].each do |key|  %>
           <% if flash[key].present? %>
             <div id="<%= key %>">

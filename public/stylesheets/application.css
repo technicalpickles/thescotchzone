@@ -1,0 +1,31 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+a {
+  color: #9fa172;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #c6c66e;
+}
+
+a:hover {
+  background-color: #9fa172;
+  color: black;
+}
+
+#heading {
+  background-color: #202004;
+  border-bottom: 1px solid white;
+}
+
+#navigation {
+  padding: 10px 0;
+  border-bottom: 1px solid white;
+}
+
+#content {
+  padding: 10px 0;
+}
