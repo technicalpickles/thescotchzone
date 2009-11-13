@@ -4,19 +4,27 @@
   <dd><%= @scotch.age %></dd>
 </dl>
 
-<% @scotch.notes.each do |note| -%>
-  <% div_for note do %>
-    <p><%= link_to note.user, note.user %> wrote:</p>
-    <blockquote><%= simple_format note.body %></blockquote>
-  <% end %>
-  <div>
-  </div>
-<% end %>
+<h3>Have you had this scotch? What say you?</h3>
 
 <%- semantic_form_for [@scotch, @note] do |form| %>
   <% form.inputs do %>
-    <%= form.input :body %>
+    <%= form.input :body, :input_html => { :rows => 5 } %>
   <% end %>
 
   <%= form.buttons :commit %>
 <% end %>
+
+<h3>Here's what others are saying</h3>
+
+<%- if @scotch.notes.present? -%>
+  <% @scotch.notes.each do |note| -%>
+    <% div_for note do %>
+      <p><%= link_to note.user, note.user %> wrote:</p>
+      <blockquote><%= simple_format note.body %></blockquote>
+    <% end %>
+    <div>
+    </div>
+  <% end %>
+<%- else %>
+  <p>Er... or how about this... you could be the first!</p>
+<%- end %>
