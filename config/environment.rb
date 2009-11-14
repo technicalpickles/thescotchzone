@@ -8,6 +8,8 @@ Rails::Initializer.run do |config|
   config.gem 'clearance'
   config.gem 'formtastic'
   config.gem 'title_estuary'
+  config.gem 'searchlogic'
+  config.gem 'will_paginate'
   config.time_zone = 'UTC'
 end
 

@@ -21,14 +21,7 @@
 <h3>Here's what others are saying</h3>
 
 <%- if @scotch.notes.present? -%>
-  <% @scotch.notes.each do |note| -%>
-    <% div_for note do %>
-      <p><%= link_to h(note.user), note.user %> wrote:</p>
-      <blockquote><%= simple_format note.body %></blockquote>
-    <% end %>
-    <div>
-    </div>
-  <% end %>
+  <%= render :partial => 'notes/list_item', :collection => @scotch.notes %>
 <%- else %>
   <p>Er... or how about this... you could be the first!</p>
 <%- end %>
