@@ -1,5 +1,7 @@
-clearance
+friendly_id
 inherited_resources
+clearance
 formtastic
 title_estuary
-friendly_id
+searchlogic
+will_paginate
