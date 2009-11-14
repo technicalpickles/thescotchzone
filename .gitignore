@@ -1,2 +1,5 @@
 log/*.log
 db/*.sqlite3
+bin
+vendor/bundler_gems/
+!vendor/bundler_gems/cache/
