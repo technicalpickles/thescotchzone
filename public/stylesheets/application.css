@@ -29,3 +29,25 @@ a:hover {
 #content {
   padding: 10px 0;
 }
+
+#navigation ul {
+  margin: 0;
+  padding: 0;
+}
+
+#navigation ul li {
+  list-style: none;
+  display: inline;
+  margin-right: 20px;
+}
+
+#navigation a {
+  background-color: #392703;
+  padding: 5px;
+  text-decoration: none;
+}
+
+#navigation a:hover {
+  color: #392703;
+  background-color: #9fa172;
+}
