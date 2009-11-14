@@ -1,0 +1,149 @@
+Title Estuary is a gem/plugin that makes it easy to set page titles.
+It it built with internationalization in mind. It requires
+ActiveSupport's I18N, but should be usable with frameworks other
+than Rails.
+
+=== How-To
+
+==== 1: tell Rails about the gem:
+
+  # in RAILS_ROOT/config/environment.rb:
+  config.gem 'title_estuary', :source => 'http://gemcutter.org'
+  
+==== 2: have Rails install the gem:
+
+  [sudo] rake gems:install
+  
+==== 3: set up your layout:
+
+  # in RAILS_ROOT/app/views/layouts/application.html.erb:
+  <html ...>
+    <head ...>
+      <title><%= page_title %></title>
+      ...
+    </head>
+    <body>
+      <h1><%= page_title %></h1>
+      ...
+    </body>
+  </html>
+
+==== 4. customize your titles:
+
+Use the format "page.title.controller_name.action_name"
+
+  # in RAILS_ROOT/config/locales/en.yml:
+  en:
+    page:
+      title:
+        accounts:
+          new:    "Sign Up"
+        sessions:
+          new:    "Sign In"
+        projects:
+          index:  "Your projects"
+          new:    "Start a new project"
+    
+If you want to use any interpolated strings, make sure
+you define an <tt>#interpolation_options</tt> method in
+your controller:
+
+  # in RAILS_ROOT/config/locales/en.yml:
+  en:
+    page:
+      title:
+        projects:
+          index:  "All {{number_of_projects}} of your projects"
+          show:   "Project {{project_name}}"
+          edit:   "Edit project {{project_name}}"
+  
+  # An example controller (that would be defined
+  # in RAILS_ROOT/app/controllers/projects_controller.rb).
+  class ProjectsController < ActionController::Base
+    # An example definition of <tt>#interpolation_options</tt>
+    # that sets certain project-related values as applicable.
+    #
+    # @return [Hash] a hash of interpolation values
+    def interpolation_options
+      returning({}) do |result|
+        result[:number_of_projects] = @projects.size if @projects.present?
+        result[:project_name] = @project.name if @project.present?
+        result[:project_id] = params[:id]
+      end
+    end
+    hide_action :interpolation_options
+  end
+  
+If you need more dynamic titles than simple interpolation affords,
+set the title manually in an action:
+
+  # in RAILS_ROOT/app/controllers/projects_controller.rb:
+  class ProjectsController < ActionController::Base
+    def show
+      @project = Project.find(params[:id])
+      self.page_title = "A title based on #{@project.some_complex_string}"
+    end
+  end
+  
+or in a filter:
+
+  # in RAILS_ROOT/app/controllers/projects_controller.rb:
+  class ProjectsController < ActionController::Base
+    before_filter :set_title
+    private
+    def set_title
+      self.page_title = "Some complex title"
+    end
+  end
+  
+or from a view:
+
+  # in RAILS_ROOT/app/view/projects/index.html.erb:
+  <% content_for :page_title do %>
+    Some complex page title
+  <% end %>
+
+=== Integration with Inherited Resources
+
+When included in a controller class that inherits
+from <tt>InheritedResources::Base</tt>, Title Estuary
+uses <tt>:resource_class</tt> when building default
+page names.
+
+@see TitleEstuary::InheritedResourcesSupport
+@see http://github.com/josevalim/inherites_resources 
+
+=== Integration with High Voltage
+
+When included in a controller class that inherits
+from <tt>HighVoltage::PagesController</tt>,
+Title Estuary uses the page title as the default title.
+It also changes the i18n key scheme to
+"page.title.<controller>.<page_name>" to let you
+define different titles for each page.  For example:
+
+  en:
+    page:
+      title:
+        pages:
+          faq: "Frequently Asked Questions"
+
+*Nota Bene*: if you include +TitleEstuary+ in
+your +ApplicationController+, you'll need to
+re-include it in the +PagesController+. If you're using
+High Voltage's default controller, you can do so in an
+initializer:
+
+  # in RAILS_ROOT/config/initializers/page_titles_for_high_voltage:
+  HighVoltage::PagesController.class_eval do
+    include TitleEstuary
+  end
+  
+If, on the other hand, you're defining your own
++PagesController+, you can include it there:
+
+  # in RAILS_ROOT/app/controllers/pages_controller.rb:
+  # An example custom PagesController.
+  class PagesController < HighVoltage::PagesController
+    include TitleEstuary
+  end

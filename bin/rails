@@ -1,0 +1,3 @@
+#!/gentoo/usr/bin/ruby18
+require File.join(File.dirname(__FILE__), "../vendor/bundler_gems/environment")
+load File.join(File.dirname(__FILE__), "../vendor/bundler_gems/gems/rails-2.3.4/bin/rails")
