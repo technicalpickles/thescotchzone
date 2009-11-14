@@ -1,0 +1,10 @@
+<%- semantic_form_for @note do |form| %>
+  <%= form.error_messages %>
+
+  <% form.inputs do %>
+    <%= form.input :body %>
+    <%= form.input :scotch_id, :as => :hidden %>
+  <% end %>
+
+  <%= form.buttons :commit %>
+<% end %>

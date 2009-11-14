@@ -1,0 +1,4 @@
+<% div_for list_item do %>
+  <p><%= link_to h(list_item.user), note.user %> wrote:</p>
+  <blockquote><%= simple_format list_item.body %></blockquote>
+<% end %>
