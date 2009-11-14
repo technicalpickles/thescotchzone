@@ -16,9 +16,17 @@ a:hover {
   color: black;
 }
 
+textarea {
+  height: 60px;
+}
+
 #heading {
   background-color: #202004;
   border-bottom: 1px solid white;
+}
+
+#heading h1 {
+  padding-top: 0.5em;
 }
 
 #navigation {
