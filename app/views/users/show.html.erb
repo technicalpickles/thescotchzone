@@ -1,0 +1,8 @@
+<% self.page_title = "#{h(@user.screen_name)}'s Shelf" -%>
+
+<%- @user.notes.each do |note| -%>
+  <%- div_for note do %>
+    <p>Regarding <%= link_to h(note.scotch), note.scotch %>:</p>
+    <blockquote><%= simple_format(note.body) %></blockquote>
+  <% end -%>
+<% end -%>

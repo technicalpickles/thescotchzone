@@ -16,7 +16,7 @@
     <%= form.buttons :commit %>
   <% end %>
 <% else %>
-  <p>We can't wait to hear about it, but... you gotta <%= link_to "Sign in", sign_in_path(:return_to => request.path) %> or <%= link_to "Sign up", sign_up_path(:return_to => request.path) %> first.
+  <p>We can't wait to hear about it, but... you gotta <%= link_to "Sign in", sign_in_path(:return_to => request.path) %> or <%= link_to "Sign up", sign_up_path(:return_to => request.path) %> first.</p>
 <% end %>
 
 

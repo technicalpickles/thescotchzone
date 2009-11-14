@@ -19,7 +19,9 @@
       <% column :full, :id => :navigation do %>
         <% column :three_fourths do %>
           <ul>
-            <li><%= link_to 'My Shelf', root_path %></li>
+            <li>
+              <%= link_to 'My Shelf', signed_in? ? current_user : root_path %>
+            </li>
             <li><%= link_to 'All Scotches', scotches_path %></li>
 
             <li><%= link_to 'Scotch Enthusiasts', users_path  %></li>
