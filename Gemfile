@@ -1,16 +1,19 @@
-clear_sources
-bundle_path "vendor/bundler_gems"
+source "http://rubygems.org"
 
-source "http://gemcutter.org"
-source "http://gems.github.com"
-
-gem "rails", "2.3.4"
+gem "rails", "2.3.10"
 
 gem "bundler"
 gem "friendly_id"
-gem 'inherited_resources'
-gem 'clearance'
+gem 'inherited_resources', '1.0.6'
+gem 'clearance', '0.8.3'
 gem 'formtastic'
 gem 'title_estuary'
 gem 'searchlogic'
 gem 'will_paginate'
+
+group :development do
+  gem "sqlite3-ruby"
+end
+group :production do
+  gem "pg"
+end

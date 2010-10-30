@@ -1,2 +1,4 @@
 log/*.log
 db/*.sqlite3
+.bundle
+vendor/bundler_gems
