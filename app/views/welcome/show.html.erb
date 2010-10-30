@@ -8,8 +8,8 @@
   </p>
 </div>
 
-<div class="span-6 last">
-  <h3>Latest Scotch Notes</h3>
+<div id="sidebar" class="prepend-1 span-5 last">
+  <h3>Recent Scotch Notes</h3>
   <% @recent_notes.each do |note| -%>
     <% div_for note do -%>
       <p><%= link_to h(note.user), note.user %> wrote about <%= link_to h(note.scotch), note.scotch %>:</p>

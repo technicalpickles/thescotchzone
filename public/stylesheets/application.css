@@ -1,6 +1,8 @@
+/* dark brownish:  #202004 */
+/* brownish: #392703 */
+/* tanish #9fa172 */
 body {
-  background-color: black;
-  color: white;
+  background-color: #202004;
 }
 
 a {
@@ -8,34 +10,37 @@ a {
 }
 
 h1, h2, h3, h4, h5 {
-  color: #c6c66e;
-}
-
-a:hover {
-  background-color: #9fa172;
-  color: black;
+  color: #392703;
 }
 
 textarea {
   height: 60px;
 }
 
+.container {
+  padding: 40px;
+  margin: 40px auto;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  background-color: #eeeeee;
+  color: black;
+}
+
 #heading {
-  background-color: #202004;
-  border-bottom: 1px solid white;
+  text-shadow: 1px 1px 5px #9fa172;
 }
-
-#heading h1 {
-  padding-top: 0.5em;
-}
-
-#navigation {
-  padding: 10px 0;
-  border-bottom: 1px solid white;
+#heading {
+  text-align: center;
+  border-bottom: 1px #392703 solid;
 }
 
 #content {
   padding: 10px 0;
+}
+
+#navigation {
+  padding: 10px 0;
+  border-bottom: 1px #392703 solid;
 }
 
 #navigation ul {
@@ -44,18 +49,19 @@ textarea {
 }
 
 #navigation ul li {
+  border-left: 1px #392703 solid;
+  border-right: 1px #392703 solid;
   list-style: none;
   display: inline;
   margin-right: 20px;
 }
 
 #navigation a {
-  background-color: #392703;
   padding: 5px;
   text-decoration: none;
 }
 
-#navigation a:hover {
-  color: #392703;
-  background-color: #9fa172;
+#sidebar {
+  margin-left: -1px;
+  border-left: 1px #392703 solid;
 }
