@@ -1,3 +1,9 @@
-# Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+  def page_title
+    @page_title || "PLACEHOLDER" # FIXME fix title_estuary, or replace it with something else
+  end
+
+  def page_title=(page_title)
+    @page_title = page_title
+  end
 end

@@ -1,4 +1,4 @@
-<% column :three_fourths do -%>
+<div class="span-18">
   <blockquote cite="http://www.imdb.com/title/tt0357413/quotes">
     I love scotch. Scotchy, scotch, scotch. Here it goes down, down into my belly... 
   </blockquote>
@@ -6,9 +6,9 @@
   <p>
     No truer words have ever been spoken by our patron saint <a href="http://www.imdb.com/character/ch0007244/">Ron Burgendy</a>. If you share his sentiments on scotch, or are just coming to appreciate it's deliciousousity, then The Scotch Zone is relevant to your interests.
   </p>
-<% end %>
+</div>
 
-<% column :one_fourth, :last do -%>
+<div class="span-6 last">
   <h3>Latest Scotch Notes</h3>
   <% @recent_notes.each do |note| -%>
     <% div_for note do -%>
@@ -16,4 +16,4 @@
       <blockquote><%= simple_format note.body %></blockquote>
     <% end -%>
   <% end -%>
-<% end %>
+</div>

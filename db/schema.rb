@@ -1,15 +1,16 @@
-# This file is auto-generated from the current state of the database. Instead of editing this file, 
-# please use the migrations feature of Active Record to incrementally modify your database, and
-# then regenerate this schema definition.
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your database schema. If you need
-# to create the application database on another system, you should be using db:schema:load, not running
-# all the migrations from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091111011200) do
+ActiveRecord::Schema.define(:version => 20101030191605) do
 
   create_table "notes", :force => true do |t|
     t.text     "body"
@@ -35,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20091111011200) do
     t.datetime "created_at"
   end
 
-  add_index "slugs", ["name", "sluggable_type", "scope", "sequence"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
+  add_index "slugs", ["name", "scope", "sequence", "sluggable_type"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
   create_table "users", :force => true do |t|
@@ -50,8 +51,8 @@ ActiveRecord::Schema.define(:version => 20091111011200) do
     t.string   "screen_name"
   end
 
+  add_index "users", ["confirmation_token", "id"], :name => "index_users_on_id_and_confirmation_token"
   add_index "users", ["email"], :name => "index_users_on_email"
-  add_index "users", ["id", "confirmation_token"], :name => "index_users_on_id_and_confirmation_token"
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end

@@ -11,13 +11,13 @@
     
   </head>
   <body>
-    <% container do %>
-      <% column :full, :id => :heading do %>
+    <div class="container">
+      <div id="heading" class="column span-24">
         <h1>The Scotch Zone</h1>
-      <% end %>
+      </div>
 
-      <% column :full, :id => :navigation do %>
-        <% column :three_fourths do %>
+      <div id="navigation" class="column span-24">
+        <div class="column span-18">
           <ul>
             <li>
               <%= link_to 'My Shelf', signed_in? ? current_user : root_path %>
@@ -26,9 +26,9 @@
 
             <li><%= link_to 'Scotch Enthusiasts', users_path  %></li>
           </ul>
-        <% end %>
+        </div>
 
-        <% column :one_fourth, :last do %>
+        <div class="column span-6 last">
           
           <ul>
             <% if signed_in? %>
@@ -37,24 +37,23 @@
               <li><%= link_to 'Sign in', sign_in_path %></li>
             <% end %>
           </ul>
-        <% end %>
-      <% end %>
+        </div>
+      </div>
 
 
-      <% column :full, :id => :content do %>
+      <div id="content" class="span-24">
         <% [:notice, :error, :warning].each do |key|  %>
           <% if flash[key].present? %>
             <div id="<%= key %>">
               <%= flash[key] %>
             </div>
-          <%end %>
+          <% end %>
         <% end %>
 
         <h2><%= page_title %></h2>
 
         <%= yield %>
-      <% end %>
-    <% end %>
+      </div>
+    </div>
   </body>
 </html>
-

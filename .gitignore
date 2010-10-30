@@ -1,4 +1,4 @@
-log/*.log
-db/*.sqlite3
 .bundle
-vendor/bundler_gems
+db/*.sqlite3
+log/*.log
+tmp/**/*

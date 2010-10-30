@@ -1,7 +1,10 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :notes
-  map.resources :users
+Thescotchzone::Application.routes.draw do
+  resources :notes
+  resources :users
 
-  map.resources :scotches, :has_many => :notes
-  map.root :controller => :welcome, :action => :show
+  resources :scotches do
+    resource :notes
+  end
+
+  root :to => "welcome#show"
 end
