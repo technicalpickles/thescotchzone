@@ -2,7 +2,6 @@ source "http://rubygems.org"
 
 gem "rails", "2.3.10"
 
-gem "bundler"
 gem "friendly_id"
 gem 'inherited_resources', '1.0.6'
 gem 'clearance', '0.8.3'
