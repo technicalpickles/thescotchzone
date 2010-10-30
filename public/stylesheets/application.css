@@ -28,8 +28,6 @@ textarea {
 
 #heading {
   text-shadow: 1px 1px 5px #9fa172;
-}
-#heading {
   text-align: center;
   border-bottom: 1px #392703 solid;
 }
@@ -64,4 +62,8 @@ textarea {
 #sidebar {
   margin-left: -1px;
   border-left: 1px #392703 solid;
+}
+
+#sidebar a {
+
 }
