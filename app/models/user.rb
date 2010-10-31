@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :notes
   has_many :scotches, :through => :notes
 
+  has_friendly_id :screen_name, :use_slug => true
+
   scope :ascend_by_screen_name, order('screen_name ASC')
 
   def to_s
