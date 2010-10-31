@@ -6,10 +6,25 @@
   <p>
     No truer words have ever been spoken by our patron saint <a href="http://www.imdb.com/character/ch0007244/">Ron Burgendy</a>. If you share his sentiments on scotch, or are just coming to appreciate it's deliciousousity, then The Scotch Zone is relevant to your interests.
   </p>
+
+  <p>
+    There are a lot of fine scotches out there. Some may say too many (they're wrong; there is no such thing). Regardless, it can be tricky to keep track track of all the scotches you've had in your scotch career, doubly so after a few scotches.
+  </p>
+
+  <p>
+    The Scotch Zone, foremost, was designed to help the up and coming scotch drinkers and experiences scotch drinkers alike with a means to track their scotch history. Think of it as a scotch log, or sclog.
+  </p>
+
+  <p>
+    So, drink up, gentlefolk, and keep on scotching and sclogging.
+  </p>
+
 </div>
 
 <hr>
+
 <h3>Recent Scotch Notes</h3>
+
 <% @recent_notes.each do |note| -%>
   <% div_for note do -%>
     <p><%= link_to h(note.user), note.user %> wrote about <%= link_to h(note.scotch), note.scotch %>:</p>
