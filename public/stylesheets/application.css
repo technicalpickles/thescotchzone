@@ -29,7 +29,7 @@ textarea {
 #heading {
   text-shadow: 1px 1px 5px #9fa172;
   text-align: center;
-  border-bottom: 1px #392703 solid;
+  border-bottom: 5px #392703 solid;
 }
 
 #content {
@@ -38,7 +38,7 @@ textarea {
 
 #navigation {
   padding: 10px 0;
-  border-bottom: 1px #392703 solid;
+  border-bottom: 5px #392703 solid;
 }
 
 #navigation ul {
