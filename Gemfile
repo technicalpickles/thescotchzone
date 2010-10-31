@@ -10,10 +10,22 @@ gem 'formtastic', '~> 1.1.0'
 gem 'title_estuary'
 gem 'will_paginate'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'steak', '>= 1.0.0.rc.1'
+  gem 'capybara'
+
+  # Other usual suspects:
+  # gem 'delorean'
+  # gem 'database_cleaner'
+  # gem 'spork'
+end
+
+
 group :development do
   gem "sqlite3-ruby"
 end
 
-group :production do
-  gem "pg"
-end
+#group :production do
+#  gem "pg"
+#end

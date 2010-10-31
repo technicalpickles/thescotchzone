@@ -13,46 +13,46 @@
 ActiveRecord::Schema.define(:version => 20101030191605) do
 
   create_table "notes", :force => true do |t|
-    t.text     "body"
-    t.integer  "user_id"
-    t.integer  "scotch_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text      "body"
+    t.integer   "user_id"
+    t.integer   "scotch_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "scotches", :force => true do |t|
-    t.string   "name"
-    t.integer  "age"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.integer   "age"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "slugs", :force => true do |t|
-    t.string   "name"
-    t.integer  "sluggable_id"
-    t.integer  "sequence",                     :default => 1, :null => false
-    t.string   "sluggable_type", :limit => 40
-    t.string   "scope",          :limit => 40
-    t.datetime "created_at"
+    t.string    "name"
+    t.integer   "sluggable_id"
+    t.integer   "sequence",                     :default => 1, :null => false
+    t.string    "sluggable_type", :limit => 40
+    t.string    "scope",          :limit => 40
+    t.timestamp "created_at"
   end
 
-  add_index "slugs", ["name", "scope", "sequence", "sluggable_type"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
+  add_index "slugs", ["name", "sluggable_type", "scope", "sequence"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
   create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "encrypted_password", :limit => 128
-    t.string   "salt",               :limit => 128
-    t.string   "confirmation_token", :limit => 128
-    t.string   "remember_token",     :limit => 128
-    t.boolean  "email_confirmed",                   :default => false, :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "screen_name"
+    t.string    "email"
+    t.string    "encrypted_password", :limit => 128
+    t.string    "salt",               :limit => 128
+    t.string    "confirmation_token", :limit => 128
+    t.string    "remember_token",     :limit => 128
+    t.boolean   "email_confirmed",                   :default => false, :null => false
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "screen_name"
   end
 
-  add_index "users", ["confirmation_token", "id"], :name => "index_users_on_id_and_confirmation_token"
   add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["id", "confirmation_token"], :name => "index_users_on_id_and_confirmation_token"
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end
