@@ -3,7 +3,11 @@ module ApplicationHelper
     # FIXME fix title_estuary, or replace it with something else
     @page_title || begin
       if @scotch
-        @scotch.to_s
+        if @scotch.new_record?
+          "Tell us about a scotch"
+        else
+          @scotch.to_s
+        end
       elsif @scotches
         "Scotches"
       else
