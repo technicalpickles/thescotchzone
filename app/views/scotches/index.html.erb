@@ -1,9 +1,13 @@
 <% self.page_title = 'Behold, Scotches!' %>
 
-<ul>
-  <%- @scotches.each do |scotch| %>
-    <li><%= link_to h(scotch), scotch_path(scotch) %> (<%= pluralize(scotch.notes.count, 'notes') %>)</li>
-  <%- end %>
-</ul>
+<%- @scotches.each do |scotch| %>
+  <% div_for scotch do -%>
+    <h3><%= link_to h(scotch), scotch_path(scotch) %>, <%= pluralize(scotch.notes.count, 'note') %></h3>
+    <% if note = scotch.notes.first %>
+      <blockquote><%= link_to note.user, note.user %> mused: <%= simple_format note.body %>
+
+    <% end %>
+  <% end %>
+<%- end %>
 
 <p>Did we miss one? Doh. <%= link_to "Let us know!", new_scotch_path %>

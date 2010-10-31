@@ -24,12 +24,11 @@
             </li>
             <% if signed_in? -%>
               <li>
-                <%= link_to 'My Shelf', current_user %>
+                <%= link_to 'My Scotch Log', current_user %>
               </li>
             <% end -%>
-            <li><%= link_to 'All Scotches', scotches_path %></li>
-
-            <li><%= link_to 'Scotch Enthusiasts', users_path  %></li>
+            <li><%= link_to 'Scotches', scotches_path %></li>
+            <li><%= link_to 'Enthusiasts', users_path  %></li>
           </ul>
         </div>
 

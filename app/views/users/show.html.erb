@@ -1,6 +1,6 @@
-<% self.page_title = "#{h(@user.screen_name)}'s Shelf" -%>
+<% self.page_title = "#{h(@user.screen_name)}'s Scotch Log" -%>
 
-<%- @user.notes.each do |note| -%>
+<% @user.notes.each do |note| -%>
   <%- div_for note do %>
     <p>Regarding <%= link_to h(note.scotch), note.scotch %>:</p>
     <blockquote><%= simple_format(note.body) %></blockquote>
