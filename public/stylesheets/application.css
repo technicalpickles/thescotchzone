@@ -17,6 +17,15 @@ textarea {
   height: 60px;
 }
 
+hr {
+  background-color: #202004;
+  height: 3px;
+}
+
+hr.slim {
+  height: 1px;
+}
+
 .container {
   padding: 40px;
   margin: 40px auto;

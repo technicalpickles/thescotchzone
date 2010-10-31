@@ -8,12 +8,12 @@
   </p>
 </div>
 
-<div id="sidebar" class="prepend-1 span-5 last">
-  <h3>Recent Scotch Notes</h3>
-  <% @recent_notes.each do |note| -%>
-    <% div_for note do -%>
-      <p><%= link_to h(note.user), note.user %> wrote about <%= link_to h(note.scotch), note.scotch %>:</p>
-      <blockquote><%= simple_format note.body %></blockquote>
-    <% end -%>
+<hr>
+<h3>Recent Scotch Notes</h3>
+<% @recent_notes.each do |note| -%>
+  <% div_for note do -%>
+    <p><%= link_to h(note.user), note.user %> wrote about <%= link_to h(note.scotch), note.scotch %>:</p>
+    <blockquote><%= simple_format note.body %></blockquote>
   <% end -%>
-</div>
+  <hr class="slim">
+<% end -%>
