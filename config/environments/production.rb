@@ -55,5 +55,7 @@ Thescotchzone::Application.configure do
     :password       => ENV['SENDGRID_PASSWORD'],
     :domain         => ENV['SENDGRID_DOMAIN']
   }
-  
+
+  config.session_options[:secure] = true
+  config.session_options[:domain] = 'thescotchzone.heroku.com'
 end
