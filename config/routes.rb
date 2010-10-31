@@ -6,5 +6,8 @@ Thescotchzone::Application.routes.draw do
     resource :notes
   end
 
+  # wtf, why this not picked up automatically?
+  match 'sign_out' => 'clearance/sessions#destroy', :via => [:delete, :get], :as => 'sign_out'
+
   root :to => "welcome#show"
 end
