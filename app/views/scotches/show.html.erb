@@ -5,20 +5,11 @@
   <dd><%= h(@scotch.age) %></dd>
 </dl>
 
-<h3>Have you had this scotch? What say you?</h3>
+<% if @scotch.notes.any? %>
+  <h3>Have you had this scotch? What say you?</h3>
 
-<%- if signed_in? %>
-  <%- semantic_form_for [@scotch, @note] do |form| %>
-    <%= form.error_messages %>
-    <% form.inputs do -%>
-      <%= form.input :body, :input_html => {:rows => 10 } %>
-    <% end -%>
-    <%= form.buttons :commit %>
-  <% end %>
-<% else %>
-  <p>We can't wait to hear about it, but... you gotta <%= link_to "Sign in", sign_in_path(:return_to => request.path) %> or <%= link_to "Sign up", sign_up_path(:return_to => request.path) %> first.</p>
+  <%= render :partial => 'note_form' %>
 <% end %>
-
 
 <h3>Here's what others are saying</h3>
 
@@ -31,4 +22,6 @@
   <% end -%>
 <%- else %>
   <p>Er... or how about this... you could be the first!</p>
+
+  <%= render :partial => 'note_form' %>
 <%- end %>

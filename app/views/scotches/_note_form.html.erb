@@ -1,0 +1,12 @@
+<%- if signed_in? %>
+  <%# FIXME pass in @scotch and @note instead of relying on them being defined here %>
+  <%- semantic_form_for [@scotch, @note] do |form| %>
+    <%= form.error_messages %>
+    <% form.inputs do -%>
+      <%= form.input :body, :input_html => {:rows => 10 } %>
+    <% end -%>
+    <%= form.buttons :commit %>
+  <% end %>
+<% else %>
+  <p>We can't wait to hear about it, but... you gotta <%= link_to "Sign in", sign_in_path(:return_to => request.path) %> or <%= link_to "Sign up", sign_up_path(:return_to => request.path) %> first.</p>
+<% end %>
