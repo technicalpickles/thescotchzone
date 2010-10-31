@@ -7,8 +7,8 @@ gem "friendly_id", '3.0.6'
 gem 'inherited_resources', '~> 1.1.0'
 gem 'clearance', '~> 0.9.0.rc9'
 gem 'formtastic', '~> 1.1.0'
-gem 'title_estuary'
 gem 'will_paginate'
+gem 'dynamic_form'
 
 group :development, :test do
   gem 'rspec-rails'
