@@ -1,9 +1,4 @@
-<%= 'MOBILE!!!' if is_mobile_device? %>
-<div class="span-18">
-  <blockquote cite="http://www.imdb.com/title/tt0357413/quotes">
-    I love scotch. Scotchy, scotch, scotch. Here it goes down, down into my belly... 
-  </blockquote>
-
+<div data-role="content">
   <p>
     No truer words have ever been spoken by our patron saint <a href="http://www.imdb.com/character/ch0007244/">Ron Burgendy</a>. If you share his sentiments on scotch, or are just coming to appreciate it's deliciousousity, then The Scotch Zone is relevant to your interests.
   </p>
@@ -20,16 +15,13 @@
     So, drink up, gentlefolk, and keep on scotching and sclogging.
   </p>
 
+  <h1>Recent Scotch Notes</h1>
+
+  <ul data-role="listview">
+    <% @recent_notes.each do |note| %>
+    <li>
+      <%= link_to "#{note.scotch} by #{note.user}", note %>
+    </li>
+    <% end %>
+  </ul>
 </div>
-
-<hr>
-
-<h3>Recent Scotch Notes</h3>
-
-<% @recent_notes.each do |note| -%>
-  <% div_for note do -%>
-    <p><%= link_to h(note.user), note.user %> wrote about <%= link_to h(note.scotch), note.scotch %>:</p>
-    <blockquote><%= simple_format note.body %></blockquote>
-  <% end -%>
-  <hr class="slim">
-<% end -%>

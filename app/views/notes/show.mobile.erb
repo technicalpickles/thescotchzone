@@ -1,0 +1,6 @@
+<div data-role="content">
+  <h1><%= link_to @note.user, @note.user %> wrote about <%= link_to @note.scotch, @note.scotch %></h1> 
+
+  <%= simple_format @note.body %>
+</div>
+

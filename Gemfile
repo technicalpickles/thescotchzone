@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-gem "rails", "3.0.0"
+gem "rails", "3.0.3"
 gem "thin"
 
 gem "friendly_id", '3.0.6'
@@ -10,11 +10,14 @@ gem 'formtastic', '~> 1.1.0'
 gem 'will_paginate'
 gem 'dynamic_form'
 
+gem 'jquery-rails'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'steak', '>= 1.0.0.rc.1'
   gem 'capybara'
 
+  gem 'ruby-debug19'
   # Other usual suspects:
   # gem 'delorean'
   # gem 'database_cleaner'
