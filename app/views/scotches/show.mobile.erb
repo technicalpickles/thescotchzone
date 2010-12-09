@@ -1,0 +1,21 @@
+<h3><%= @scotch.name %></h3>
+<dl>
+  <dt>Age</dt>
+  <dd><%= @scotch.age %></dd>
+</dl>
+
+<h4>Notes from the scotchmmunity</h4>
+
+<%- if @scotch.notes.present? -%>
+  <div data-role="collapsible-set" class="ui-body ui-body-b">
+    <% @scotch.notes.each do |note| -%>
+      <div data-role="collapsible" data-theme="b">
+      <h5><%= note.user %> wrote:</h5>
+      <%= simple_format note.body %>
+      <%= link_to "Read more notes from #{note.user}...", note.user %>
+      </div>
+    <% end -%>
+  </div>
+<%- else %>
+  <p>Er... or how about this... you could be the first!</p>
+<%- end %>

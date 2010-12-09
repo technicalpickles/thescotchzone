@@ -1,0 +1,11 @@
+<h3>Notes by <%= @user %></h3>
+
+<div data-role="collapsible-set" class="ui-body ui-body-b">
+  <%- @user.notes.each do |note| -%>
+    <div data-role="collapsible" data-theme="b">
+    <h5><%= note.scotch %><h5>
+    <%= simple_format note.body %>
+    <%= link_to "Read more #{note.scotch} notes...", note.scotch %>
+    </div>
+  <%- end %>
+</div>

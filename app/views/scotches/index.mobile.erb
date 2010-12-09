@@ -1,0 +1,9 @@
+<p>Did we miss one? Doh. <%= link_to "Let us know!", new_scotch_path %>
+
+<h4>All Scotches</h4>
+
+<ul data-role="listview">
+  <%- @scotches.each do |scotch| %>
+    <li><%= link_to scotch, scotch %></li>
+  <%- end %>
+</ul>
