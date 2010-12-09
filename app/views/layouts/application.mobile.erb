@@ -16,6 +16,25 @@
       <div data-role="content">
         <%= yield %>
       </div>
+
+      <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+          <ul>
+            <li>
+              <%= navigation_link_to 'Home', root_path %>
+            </li>
+            <% if signed_in? -%>
+              <li>
+                <%= link_to 'My Scotch Log', current_user %>
+              </li>
+            <% else %>
+              <li><%= link_to "Sign up", sign_up_path(:return_to => request.path) %></li>
+            <% end -%>
+            <li><%= link_to 'Scotches', scotches_path %></li>
+            <li><%= link_to 'Enthusiasts', users_path  %></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -19,4 +19,13 @@ module ApplicationHelper
   def page_title=(page_title)
     @page_title = page_title
   end
+
+  def navigation_link_to(name, options = {}, html_options = {}, &block)
+    if current_page?(options)
+      html_options[:class] ||= ""
+      html_options[:class] += " ui-btn-active"
+    end
+
+    link_to name, options, html_options, &block
+  end
 end
