@@ -4,8 +4,6 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery
 
-  before_filter :set_mobile_format
-
   def sign_in(user)
     if user
       cookies[:remember_token] = {
@@ -16,5 +14,13 @@ class ApplicationController < ActionController::Base
       self.current_user = user
     end
   end
+
+  def set_mobile_format
+    if is_mobile_device? # && !request.xhr?
+      request.format = session[:mobile_view] == false ? :html : :mobile
+      session[:mobile_view] = true if session[:mobile_view].nil?
+    end
+  end
+  
 
 end
