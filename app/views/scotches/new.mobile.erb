@@ -1,0 +1,16 @@
+<% form_for @scotch do |form| %>
+  <div data-role="fieldcontain">
+    <%= form.label :name %> <%= form.text_field :name %>
+  </div>
+
+  <div data-role="fieldcontain">
+    <%= form.label :age %> <%= form.text_field :age %>
+  </div>
+
+  <div class="ui-body ui-body-b">
+    <fieldset class="ui-grid-a">
+      <%= submit_tag 'Save it!' %>
+    </fieldset>
+  </div>
+<% end %>
+

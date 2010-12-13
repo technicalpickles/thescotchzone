@@ -1,0 +1,14 @@
+<%- form_for @note do |form| %>
+  <div data-role="fieldcontain">
+    <%= form.label :body %> <%= form.text_area :body %>
+  </div>
+
+  <%= form.hidden_field :scotch_id %>
+
+  <div class="ui-body ui-body-b">
+    <fieldset class="ui-grid-a">
+      <%= submit_tag 'Save it!' %>
+    </fieldset>
+  </div>
+
+<% end %>
