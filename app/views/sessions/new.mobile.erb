@@ -1,0 +1,17 @@
+<% form_for :session, :url => session_path do |form| %>
+  <%= hidden_field_tag :return_to, params[:return_to] %>
+
+  <div data-role="fieldcontain">
+  <%= form.label :email %> <%= form.text_field :email %>
+  </div>
+  <div data-role="fieldcontain">
+  <%= form.label :password %> <%= form.password_field :password %>
+  </div>
+
+  <div class="ui-body ui-body-b">
+    <fieldset class="ui-grid-a">
+      <%= submit_tag 'Sign in' %>
+    </fieldset>
+  </div>
+<% end %>
+
