@@ -46,7 +46,7 @@
 
 
       <div id="content" class="span-24">
-        <% [:notice, :error, :warning].each do |key|  %>
+        <% [:notice, :error, :warning, :failure].each do |key|  %>
           <% if flash[key].present? %>
             <div id="<%= key %>">
               <%= flash[key] %>

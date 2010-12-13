@@ -16,6 +16,8 @@
       </div>
     <% end -%>
   </div>
+
+  <%= link_to 'Add your own note!', new_scotch_notes_path(@scotch)  %>
 <%- else %>
-  <p>Er... or how about this... you could be the first!</p>
+  <p>Er... or how about this... <%= link_to 'you could be the first!', new_scotch_notes_path(@scotch) %></p>
 <%- end %>

@@ -1,6 +1,9 @@
 class NotesController < InheritedResources::Base
   belongs_to :scotch, :user, :optional => true
 
+  before_filter :authenticate, :only => [:new, :create, :edit, :destroy]
+  
+
   def create
     create! { @note.scotch }
   end
